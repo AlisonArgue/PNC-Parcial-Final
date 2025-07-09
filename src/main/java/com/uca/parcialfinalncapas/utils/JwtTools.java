@@ -1,6 +1,5 @@
 package com.uca.parcialfinalncapas.utils;
 
-import com.uca.parcialfinalncapas.entities.User;
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.security.Keys;
 import jakarta.annotation.PostConstruct;
@@ -34,7 +33,7 @@ public class JwtTools {
         this.key = Keys.hmacShaKeyFor(jwtSecret.getBytes(StandardCharsets.UTF_8));
     }
 
-    public String generateToken(User user) {
+    public String generateToken(String user) {
         String correo = user.getCorreo();
         return Jwts.builder()
                 .setSubject(correo)
