@@ -7,11 +7,14 @@ import jakarta.annotation.PostConstruct;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
 
 import javax.crypto.SecretKey;
 import java.nio.charset.StandardCharsets;
 import java.util.Date;
 
+
+@Service
 public class JwtTools {
 
     private static final SignatureAlgorithm SIGNATURE_ALGORITHM = SignatureAlgorithm.HS256;
@@ -32,9 +35,9 @@ public class JwtTools {
     }
 
     public String generateToken(User user) {
-        String nombre = user.getNombre();
+        String correo = user.getCorreo();
         return Jwts.builder()
-                .setSubject(nombre)
+                .setSubject(correo)
                 .setIssuedAt(new Date())
                 .setExpiration(new Date(System.currentTimeMillis() + jwtExpirationMs))
                 .signWith(key, SIGNATURE_ALGORITHM)
