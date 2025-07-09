@@ -1,6 +1,5 @@
-package com.example.jwt_demo.security;
-
-import com.example.jwt_demo.service.CustomUserDetailsService;
+package com.uca.parcialfinalncapas.security;
+import com.uca.parcialfinalncapas.service.UserDService;
 import com.uca.parcialfinalncapas.config.AuthEntryPointJwt;
 import com.uca.parcialfinalncapas.config.AuthTokenFilter;
 import com.uca.parcialfinalncapas.service.UserDService;
