@@ -3,11 +3,13 @@ package com.uca.parcialfinalncapas.service;
 import com.uca.parcialfinalncapas.entities.User;
 import com.uca.parcialfinalncapas.exceptions.UserNotFoundException;
 import com.uca.parcialfinalncapas.repository.UserRepository;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 import org.springframework.security.core.userdetails.*;
 
 import java.util.Collections;
 import java.util.Optional;
+
 
 @Service
 public class UserDService implements UserDetailsService {
